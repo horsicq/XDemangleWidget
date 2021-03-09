@@ -35,6 +35,9 @@ public:
     explicit XDemangleWidget(QWidget *pParent=nullptr);
     ~XDemangleWidget();
 
+protected:
+    virtual void registerShortcuts(bool bState);
+
 private:
     Ui::XDemangleWidget *ui;
 };

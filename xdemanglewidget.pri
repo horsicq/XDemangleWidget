@@ -1,3 +1,5 @@
+INCLUDEPATH += $$PWD
+DEPENDPATH += $$PWD
 
 FORMS += \
     $$PWD/xdemanglewidget.ui

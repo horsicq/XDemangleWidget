@@ -32,3 +32,8 @@ XDemangleWidget::~XDemangleWidget()
 {
     delete ui;
 }
+
+void XDemangleWidget::registerShortcuts(bool bState)
+{
+    Q_UNUSED(bState)
+}
