@@ -26,6 +26,18 @@ XDemangleWidget::XDemangleWidget(QWidget *pParent) :
     ui(new Ui::XDemangleWidget)
 {
     ui->setupUi(this);
+
+    QSignalBlocker blocker(ui->comboBoxMode);
+
+    QList<XDemangle::MODE> listModes=XDemangle::getAllModes();
+
+    int nNumberOfModes=listModes.count();
+
+    for(int i=0;i<nNumberOfModes;i++)
+    {
+        XDemangle::MODE mode=listModes.at(i);
+        ui->comboBoxMode->addItem(XDemangle::modeIdToString(mode),mode);
+    }
 }
 
 XDemangleWidget::~XDemangleWidget()
@@ -33,7 +45,38 @@ XDemangleWidget::~XDemangleWidget()
     delete ui;
 }
 
+void XDemangleWidget::process()
+{
+    XDemangle xDemangle;
+
+    QString sText=ui->plainTextEditInput->toPlainText().trimmed();
+    XDemangle::MODE mode=(XDemangle::MODE)(ui->comboBoxMode->currentData().toInt());
+
+    if(mode==XDemangle::MODE_AUTO)
+    {
+        mode=xDemangle.detectMode(sText);
+    }
+
+    ui->labelMode->setText(XDemangle::modeIdToString(mode));
+
+    QString sResult=XDemangle().convert(sText,mode);
+
+    ui->plainTextEditResult->setPlainText(sResult);
+}
+
 void XDemangleWidget::registerShortcuts(bool bState)
 {
     Q_UNUSED(bState)
+}
+
+void XDemangleWidget::on_comboBoxMode_currentIndexChanged(int nIndex)
+{
+    Q_UNUSED(nIndex)
+
+    process();
+}
+
+void XDemangleWidget::on_plainTextEditInput_textChanged()
+{
+    process();
 }

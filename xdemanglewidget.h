@@ -22,6 +22,7 @@
 #define XDEMANGLEWIDGET_H
 
 #include "xshortcutswidget.h"
+#include "xdemangle.h"
 
 namespace Ui {
 class XDemangleWidget;
@@ -35,8 +36,15 @@ public:
     explicit XDemangleWidget(QWidget *pParent=nullptr);
     ~XDemangleWidget();
 
+private:
+    void process();
+
 protected:
     virtual void registerShortcuts(bool bState);
+
+private slots:
+    void on_comboBoxMode_currentIndexChanged(int nIndex);
+    void on_plainTextEditInput_textChanged();
 
 private:
     Ui::XDemangleWidget *ui;
