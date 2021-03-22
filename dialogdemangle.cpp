@@ -18,40 +18,19 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 //
-#ifndef XDEMANGLEWIDGET_H
-#define XDEMANGLEWIDGET_H
+#include "dialogdemangle.h"
+#include "ui_dialogdemangle.h"
 
-#include "xshortcutswidget.h"
-#include "xdemangle.h"
-#include "llvm/Demangle/Demangle.h"
+DialogDemangle::DialogDemangle(QWidget *pParent, QString sString) :
+    QDialog(pParent),
+    ui(new Ui::DialogDemangle)
+{
+    ui->setupUi(this);
 
-namespace Ui {
-class XDemangleWidget;
+    ui->widgetDemangle->setData(sString);
 }
 
-class XDemangleWidget : public XShortcutsWidget
+DialogDemangle::~DialogDemangle()
 {
-    Q_OBJECT
-
-public:
-    explicit XDemangleWidget(QWidget *pParent=nullptr);
-    ~XDemangleWidget();
-
-    void setData(QString sString);
-
-private:
-    void process();
-    void process_llvm();
-
-protected:
-    virtual void registerShortcuts(bool bState);
-
-private slots:
-    void on_comboBoxMode_currentIndexChanged(int nIndex);
-    void on_plainTextEditInput_textChanged();
-
-private:
-    Ui::XDemangleWidget *ui;
-};
-
-#endif // XDEMANGLEWIDGET_H
+    delete ui;
+}
