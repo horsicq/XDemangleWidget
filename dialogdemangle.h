@@ -35,6 +35,9 @@ public:
     explicit DialogDemangle(QWidget *pParent,QString sString="");
     ~DialogDemangle();
 
+private slots:
+    void on_pushButton_clicked();
+
 private:
     Ui::DialogDemangle *ui;
 };

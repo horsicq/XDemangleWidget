@@ -34,3 +34,8 @@ DialogDemangle::~DialogDemangle()
 {
     delete ui;
 }
+
+void DialogDemangle::on_pushButton_clicked()
+{
+    this->close();
+}
