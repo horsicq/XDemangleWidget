@@ -53,21 +53,23 @@ void XDemangleWidget::setData(QString sString)
 
 void XDemangleWidget::process()
 {
-    XDemangle xDemangle;
-
     QString sText=ui->plainTextEditInput->toPlainText().trimmed();
     XDemangle::MODE mode=(XDemangle::MODE)(ui->comboBoxMode->currentData().toInt());
 
     if(mode==XDemangle::MODE_AUTO)
     {
-        mode=xDemangle.detectMode(sText);
+        QString  sResult=QString::fromUtf8(llvm::demangle(sText.toUtf8().data()).c_str()); // TODO remake!!!
+
+        ui->plainTextEditResult->setPlainText(sResult);
     }
+    else
+    {
+        ui->labelMode->setText(XDemangle::modeIdToString(mode));
 
-    ui->labelMode->setText(XDemangle::modeIdToString(mode));
+        QString sResult=XDemangle().demangle(sText,mode);
 
-    QString sResult=XDemangle().convert(sText,mode);
-
-    ui->plainTextEditResult->setPlainText(sResult);
+        ui->plainTextEditResult->setPlainText(sResult);
+    }
 }
 
 void XDemangleWidget::process_llvm()
@@ -93,12 +95,12 @@ void XDemangleWidget::on_comboBoxMode_currentIndexChanged(int nIndex)
 {
     Q_UNUSED(nIndex)
 
-//    process();
-    process_llvm();
+    process();
+//    process_llvm();
 }
 
 void XDemangleWidget::on_plainTextEditInput_textChanged()
 {
-//    process();
-    process_llvm();
+    process();
+//    process_llvm();
 }
