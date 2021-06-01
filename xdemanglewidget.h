@@ -23,7 +23,6 @@
 
 #include "xshortcutswidget.h"
 #include "xdemangle.h"
-#include "llvm/Demangle/Demangle.h"
 
 namespace Ui {
 class XDemangleWidget;
@@ -41,7 +40,6 @@ public:
 
 private:
     void process();
-    void process_llvm();
 
 protected:
     virtual void registerShortcuts(bool bState);

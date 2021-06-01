@@ -27,7 +27,11 @@ XDemangleWidget::XDemangleWidget(QWidget *pParent) :
 {
     ui->setupUi(this);
 
-    QSignalBlocker blocker(ui->comboBoxMode);
+#if QT_VERSION >= 0x050300
+    const QSignalBlocker blocker(ui->comboBoxMode);
+#else
+    const bool bBlocked1=ui->comboBoxMode->blockSignals(true);
+#endif
 
 //    QList<XDemangle::MODE> listModes=XDemangle::getAllModes();
     QList<XDemangle::MODE> listModes=XDemangle::getSupportedModes();
@@ -39,6 +43,10 @@ XDemangleWidget::XDemangleWidget(QWidget *pParent) :
         XDemangle::MODE mode=listModes.at(i);
         ui->comboBoxMode->addItem(XDemangle::modeIdToString(mode),mode);
     }
+
+#if QT_VERSION < 0x050300
+    ui->comboBoxMode->blockSignals(bBlocked1);
+#endif
 }
 
 XDemangleWidget::~XDemangleWidget()
@@ -58,30 +66,12 @@ void XDemangleWidget::process()
 
     if(mode==XDemangle::MODE_AUTO)
     {
-        QString  sResult=QString::fromUtf8(llvm::demangle(sText.toUtf8().data()).c_str()); // TODO remake!!!
-
-        ui->plainTextEditResult->setPlainText(sResult);
+        mode=XDemangle::detectMode(sText);
     }
-    else
-    {
-        ui->labelMode->setText(XDemangle::modeIdToString(mode));
 
-        QString sResult=XDemangle().demangle(sText,mode);
+    ui->labelMode->setText(XDemangle::modeIdToString(mode));
 
-        ui->plainTextEditResult->setPlainText(sResult);
-    }
-}
-
-void XDemangleWidget::process_llvm()
-{
-    QString sString=ui->plainTextEditInput->toPlainText().trimmed();
-    XDemangle::MODE mode=(XDemangle::MODE)(ui->comboBoxMode->currentData().toInt());
-    QString sResult;
-
-    if(mode==XDemangle::MODE_AUTO)
-    {
-        sResult=QString::fromUtf8(llvm::demangle(sString.toUtf8().data()).c_str());
-    }
+    QString sResult=XDemangle().demangle(sText,mode);
 
     ui->plainTextEditResult->setPlainText(sResult);
 }

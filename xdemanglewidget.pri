@@ -22,8 +22,3 @@ SOURCES += \
     XCONFIG += xdemangle
     include($$PWD/../XDemangle/xdemangle.pri)
 }
-
-!contains(XCONFIG, xllvmdemangler) {
-    XCONFIG += xllvmdemangler
-    include($$PWD/../XLLVMDemangler/xllvmdemangler.pri)
-}
