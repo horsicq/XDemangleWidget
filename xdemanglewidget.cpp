@@ -27,7 +27,7 @@ XDemangleWidget::XDemangleWidget(QWidget *pParent) :
 {
     ui->setupUi(this);
 
-#if QT_VERSION >= 0x050300
+#if QT_VERSION >= QT_VERSION_CHECK(5,3,0)
     const QSignalBlocker blocker(ui->comboBoxMode);
 #else
     const bool bBlocked1=ui->comboBoxMode->blockSignals(true);
@@ -44,7 +44,7 @@ XDemangleWidget::XDemangleWidget(QWidget *pParent) :
         ui->comboBoxMode->addItem(XDemangle::modeIdToString(mode),mode);
     }
 
-#if QT_VERSION < 0x050300
+#if QT_VERSION < QT_VERSION_CHECK(5,3,0)
     ui->comboBoxMode->blockSignals(bBlocked1);
 #endif
 }
