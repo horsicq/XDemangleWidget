@@ -21,8 +21,8 @@
 #ifndef XDEMANGLEWIDGET_H
 #define XDEMANGLEWIDGET_H
 
-#include "xshortcutswidget.h"
 #include "xdemangle.h"
+#include "xshortcutswidget.h"
 
 namespace Ui {
 class XDemangleWidget;
