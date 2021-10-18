@@ -22,3 +22,7 @@ SOURCES += \
     XCONFIG += xdemangle
     include($$PWD/../XDemangle/xdemangle.pri)
 }
+
+DISTFILES += \
+    $$PWD/LICENSE \
+    $$PWD/README.md
