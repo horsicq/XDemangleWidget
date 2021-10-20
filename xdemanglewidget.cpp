@@ -38,7 +38,7 @@ XDemangleWidget::XDemangleWidget(QWidget *pParent) :
 
     int nNumberOfModes=listModes.count();
 
-    for(int i=0;i<nNumberOfModes;i++)
+    for(qint32 i=0;i<nNumberOfModes;i++)
     {
         XDemangle::MODE mode=listModes.at(i);
         ui->comboBoxMode->addItem(XDemangle::modeIdToString(mode),mode);
