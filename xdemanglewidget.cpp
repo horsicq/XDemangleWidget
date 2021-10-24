@@ -36,7 +36,7 @@ XDemangleWidget::XDemangleWidget(QWidget *pParent) :
 //    QList<XDemangle::MODE> listModes=XDemangle::getAllModes();
     QList<XDemangle::MODE> listModes=XDemangle::getSupportedModes();
 
-    int nNumberOfModes=listModes.count();
+    qint32 nNumberOfModes=listModes.count();
 
     for(qint32 i=0;i<nNumberOfModes;i++)
     {
