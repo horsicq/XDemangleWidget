@@ -1,3 +1,3 @@
 # XDemangleWidget
 
-Widget for demangling result
+Widget for demangling
