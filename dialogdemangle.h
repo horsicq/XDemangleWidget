@@ -21,13 +21,13 @@
 #ifndef DIALOGDEMANGLE_H
 #define DIALOGDEMANGLE_H
 
-#include <QDialog>
+#include "xshortcutsdialog.h"
 
 namespace Ui {
 class DialogDemangle;
 }
 // TODO XShortcutsDialog !!!
-class DialogDemangle : public QDialog
+class DialogDemangle : public XShortcutsDialog
 {
     Q_OBJECT
 
