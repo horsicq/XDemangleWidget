@@ -21,7 +21,7 @@
 #include "dialogdemangle.h"
 #include "ui_dialogdemangle.h"
 
-DialogDemangle::DialogDemangle(QWidget *pParent, QString sString) :
+DialogDemangle::DialogDemangle(QWidget *pParent,QString sString) :
     XShortcutsDialog(pParent),
     ui(new Ui::DialogDemangle)
 {
