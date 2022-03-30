@@ -26,7 +26,7 @@
 namespace Ui {
 class DialogDemangle;
 }
-// TODO XShortcutsDialog !!!
+
 class DialogDemangle : public XShortcutsDialog
 {
     Q_OBJECT
