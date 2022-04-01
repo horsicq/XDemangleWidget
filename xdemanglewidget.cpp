@@ -79,7 +79,6 @@ void XDemangleWidget::process()
 void XDemangleWidget::registerShortcuts(bool bState)
 {
     Q_UNUSED(bState)
-
     // TODO
 }
 
