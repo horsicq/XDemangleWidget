@@ -87,11 +87,9 @@ void XDemangleWidget::on_comboBoxMode_currentIndexChanged(int nIndex)
     Q_UNUSED(nIndex)
 
     process();
-//    process_llvm();
 }
 
 void XDemangleWidget::on_plainTextEditInput_textChanged()
 {
     process();
-//    process_llvm();
 }
