@@ -79,7 +79,7 @@ void XDemangleWidget::process()
 void XDemangleWidget::registerShortcuts(bool bState)
 {
     Q_UNUSED(bState)
-    // TODO
+    // TODO !!!
 }
 
 void XDemangleWidget::on_comboBoxMode_currentIndexChanged(int nIndex)
