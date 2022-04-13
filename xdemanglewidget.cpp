@@ -33,7 +33,7 @@ XDemangleWidget::XDemangleWidget(QWidget *pParent) :
     const bool bBlocked1=ui->comboBoxMode->blockSignals(true);
 #endif
 
-//    QList<XDemangle::MODE> listModes=XDemangle::getAllModes();
+//    QList<XDemangle::MODE> listModes=XDemangle::getAllModes(); // TODO Check
     QList<XDemangle::MODE> listModes=XDemangle::getSupportedModes();
 
     qint32 nNumberOfModes=listModes.count();
