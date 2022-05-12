@@ -35,6 +35,11 @@ DialogDemangle::~DialogDemangle()
     delete ui;
 }
 
+void DialogDemangle::setData(QString sString)
+{
+    ui->widgetDemangle->setData(sString);
+}
+
 void DialogDemangle::on_pushButton_clicked()
 {
     this->close();
