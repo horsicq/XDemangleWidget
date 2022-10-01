@@ -1,10 +1,6 @@
 INCLUDEPATH += $$PWD
 DEPENDPATH += $$PWD
 
-FORMS += \
-    $$PWD/dialogdemangle.ui \
-    $$PWD/xdemanglewidget.ui
-
 HEADERS += \
     $$PWD/dialogdemangle.h \
     $$PWD/xdemanglewidget.h
@@ -12,6 +8,10 @@ HEADERS += \
 SOURCES += \
     $$PWD/dialogdemangle.cpp \
     $$PWD/xdemanglewidget.cpp
+
+FORMS += \
+    $$PWD/dialogdemangle.ui \
+    $$PWD/xdemanglewidget.ui
 
 !contains(XCONFIG, xshortcuts) {
     XCONFIG += xshortcuts
