@@ -27,12 +27,11 @@ namespace Ui {
 class DialogDemangle;
 }
 
-class DialogDemangle : public XShortcutsDialog
-{
+class DialogDemangle : public XShortcutsDialog {
     Q_OBJECT
 
 public:
-    explicit DialogDemangle(QWidget *pParent,QString sString="");
+    explicit DialogDemangle(QWidget *pParent, QString sString = "");
     ~DialogDemangle();
 
     void setData(QString sString);
@@ -44,4 +43,4 @@ private:
     Ui::DialogDemangle *ui;
 };
 
-#endif // DIALOGDEMANGLE_H
+#endif  // DIALOGDEMANGLE_H

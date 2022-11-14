@@ -28,12 +28,11 @@ namespace Ui {
 class XDemangleWidget;
 }
 
-class XDemangleWidget : public XShortcutsWidget
-{
+class XDemangleWidget : public XShortcutsWidget {
     Q_OBJECT
 
 public:
-    explicit XDemangleWidget(QWidget *pParent=nullptr);
+    explicit XDemangleWidget(QWidget *pParent = nullptr);
     ~XDemangleWidget();
 
     void setData(QString sString);
@@ -52,4 +51,4 @@ private:
     Ui::XDemangleWidget *ui;
 };
 
-#endif // XDEMANGLEWIDGET_H
+#endif  // XDEMANGLEWIDGET_H
