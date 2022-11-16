@@ -22,7 +22,8 @@
 
 #include "ui_xdemanglewidget.h"
 
-XDemangleWidget::XDemangleWidget(QWidget *pParent) : XShortcutsWidget(pParent), ui(new Ui::XDemangleWidget) {
+XDemangleWidget::XDemangleWidget(QWidget *pParent) : XShortcutsWidget(pParent), ui(new Ui::XDemangleWidget)
+{
     ui->setupUi(this);
 
     const bool bBlocked1 = ui->comboBoxMode->blockSignals(true);
@@ -40,15 +41,18 @@ XDemangleWidget::XDemangleWidget(QWidget *pParent) : XShortcutsWidget(pParent), 
     ui->comboBoxMode->blockSignals(bBlocked1);
 }
 
-XDemangleWidget::~XDemangleWidget() {
+XDemangleWidget::~XDemangleWidget()
+{
     delete ui;
 }
 
-void XDemangleWidget::setData(QString sString) {
+void XDemangleWidget::setData(QString sString)
+{
     ui->plainTextEditInput->setPlainText(sString);
 }
 
-void XDemangleWidget::process() {
+void XDemangleWidget::process()
+{
     QString sText = ui->plainTextEditInput->toPlainText().trimmed();
     XDemangle::MODE mode = (XDemangle::MODE)(ui->comboBoxMode->currentData().toInt());
 
@@ -63,17 +67,20 @@ void XDemangleWidget::process() {
     ui->plainTextEditResult->setPlainText(sResult);
 }
 
-void XDemangleWidget::registerShortcuts(bool bState) {
+void XDemangleWidget::registerShortcuts(bool bState)
+{
     Q_UNUSED(bState)
     // TODO
 }
 
-void XDemangleWidget::on_comboBoxMode_currentIndexChanged(int nIndex) {
+void XDemangleWidget::on_comboBoxMode_currentIndexChanged(int nIndex)
+{
     Q_UNUSED(nIndex)
 
     process();
 }
 
-void XDemangleWidget::on_plainTextEditInput_textChanged() {
+void XDemangleWidget::on_plainTextEditInput_textChanged()
+{
     process();
 }

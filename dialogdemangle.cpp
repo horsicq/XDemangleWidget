@@ -22,20 +22,24 @@
 
 #include "ui_dialogdemangle.h"
 
-DialogDemangle::DialogDemangle(QWidget *pParent, QString sString) : XShortcutsDialog(pParent), ui(new Ui::DialogDemangle) {
+DialogDemangle::DialogDemangle(QWidget *pParent, QString sString) : XShortcutsDialog(pParent), ui(new Ui::DialogDemangle)
+{
     ui->setupUi(this);
 
     ui->widgetDemangle->setData(sString);
 }
 
-DialogDemangle::~DialogDemangle() {
+DialogDemangle::~DialogDemangle()
+{
     delete ui;
 }
 
-void DialogDemangle::setData(QString sString) {
+void DialogDemangle::setData(QString sString)
+{
     ui->widgetDemangle->setData(sString);
 }
 
-void DialogDemangle::on_pushButton_clicked() {
+void DialogDemangle::on_pushButton_clicked()
+{
     this->close();
 }
