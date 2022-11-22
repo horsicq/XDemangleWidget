@@ -22,8 +22,7 @@
 
 #include "ui_xdemanglewidget.h"
 
-XDemangleWidget::XDemangleWidget(QWidget *pParent)
-    : XShortcutsWidget(pParent), ui(new Ui::XDemangleWidget)
+XDemangleWidget::XDemangleWidget(QWidget *pParent) : XShortcutsWidget(pParent), ui(new Ui::XDemangleWidget)
 {
     ui->setupUi(this);
 
