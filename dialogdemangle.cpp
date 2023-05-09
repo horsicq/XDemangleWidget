@@ -34,7 +34,7 @@ DialogDemangle::~DialogDemangle()
     delete ui;
 }
 
-void DialogDemangle::setData(QString sString)
+void DialogDemangle::setData(const QString &sString)
 {
     ui->widgetDemangle->setData(sString);
 }

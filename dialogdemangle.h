@@ -34,7 +34,7 @@ public:
     explicit DialogDemangle(QWidget *pParent, QString sString = "");
     ~DialogDemangle();
 
-    void setData(QString sString);
+    void setData(const QString &sString);
 
 private slots:
     void on_pushButton_clicked();
