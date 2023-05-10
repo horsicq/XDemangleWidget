@@ -35,7 +35,7 @@ public:
     explicit XDemangleWidget(QWidget *pParent = nullptr);
     ~XDemangleWidget();
 
-    void setData(QString sString);
+    void setData(const QString &sString);
 
 private:
     void process();

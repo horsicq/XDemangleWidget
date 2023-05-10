@@ -46,7 +46,7 @@ XDemangleWidget::~XDemangleWidget()
     delete ui;
 }
 
-void XDemangleWidget::setData(QString sString)
+void XDemangleWidget::setData(const QString &sString)
 {
     ui->plainTextEditInput->setPlainText(sString);
 }
