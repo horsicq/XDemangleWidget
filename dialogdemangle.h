@@ -31,7 +31,7 @@ class DialogDemangle : public XShortcutsDialog {
     Q_OBJECT
 
 public:
-    explicit DialogDemangle(QWidget *pParent, QString sString = "");
+    explicit DialogDemangle(QWidget *pParent, const QString &sString = "");
     ~DialogDemangle();
 
     void setData(const QString &sString);
