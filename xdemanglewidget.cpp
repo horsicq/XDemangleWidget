@@ -51,6 +51,10 @@ void XDemangleWidget::setData(const QString &sString)
     ui->plainTextEditInput->setPlainText(sString);
 }
 
+void XDemangleWidget::adjustView()
+{
+}
+
 void XDemangleWidget::process()
 {
     QString sText = ui->plainTextEditInput->toPlainText().trimmed();

@@ -36,6 +36,7 @@ public:
     ~XDemangleWidget();
 
     void setData(const QString &sString);
+    virtual void adjustView();
 
 private:
     void process();
