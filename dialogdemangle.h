@@ -34,7 +34,9 @@ public:
     explicit DialogDemangle(QWidget *pParent, const QString &sString = "");
     ~DialogDemangle();
 
-    virtual void adjustView() {}
+    virtual void adjustView()
+    {
+    }
 
     void setData(const QString &sString);
 
@@ -42,7 +44,10 @@ private slots:
     void on_pushButton_clicked();
 
 protected:
-    virtual void registerShortcuts(bool bState) { Q_UNUSED(bState) }
+    virtual void registerShortcuts(bool bState)
+    {
+        Q_UNUSED(bState)
+    }
 
 private:
     Ui::DialogDemangle *ui;
