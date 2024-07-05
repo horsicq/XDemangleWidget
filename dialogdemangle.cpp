@@ -22,7 +22,7 @@
 
 #include "ui_dialogdemangle.h"
 
-DialogDemangle::DialogDemangle(QWidget *pParent, const QString &sString) : XShortcutsDialog(pParent), ui(new Ui::DialogDemangle)
+DialogDemangle::DialogDemangle(QWidget *pParent, const QString &sString) : XShortcutsDialog(pParent, false), ui(new Ui::DialogDemangle)
 {
     ui->setupUi(this);
 
