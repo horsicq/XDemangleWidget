@@ -34,9 +34,7 @@ public:
     explicit DialogDemangle(QWidget *pParent, const QString &sString = "");
     ~DialogDemangle();
 
-    virtual void adjustView()
-    {
-    }
+    virtual void adjustView();
 
     void setData(const QString &sString);
 
