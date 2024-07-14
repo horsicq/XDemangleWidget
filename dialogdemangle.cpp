@@ -48,3 +48,8 @@ void DialogDemangle::on_pushButton_clicked()
 {
     this->close();
 }
+
+void DialogDemangle::registerShortcuts(bool bState)
+{
+    Q_UNUSED(bState)
+}
