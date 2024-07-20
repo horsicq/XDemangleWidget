@@ -36,7 +36,6 @@ DialogDemangle::~DialogDemangle()
 
 void DialogDemangle::adjustView()
 {
-
 }
 
 void DialogDemangle::setData(const QString &sString)
