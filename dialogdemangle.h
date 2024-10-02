@@ -37,6 +37,7 @@ public:
     virtual void adjustView();
 
     void setData(const QString &sString);
+    void setGlobal(XShortcuts *pShortcuts, XOptions *pXOptions);
 
 private slots:
     void on_pushButton_clicked();

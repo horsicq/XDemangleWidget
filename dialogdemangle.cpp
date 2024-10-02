@@ -43,6 +43,12 @@ void DialogDemangle::setData(const QString &sString)
     ui->widgetDemangle->setData(sString);
 }
 
+void DialogDemangle::setGlobal(XShortcuts *pShortcuts, XOptions *pXOptions)
+{
+    ui->widgetDemangle->setGlobal(pShortcuts, pXOptions);
+    XShortcutsDialog::setGlobal(pShortcuts, pXOptions);
+}
+
 void DialogDemangle::on_pushButton_clicked()
 {
     this->close();
