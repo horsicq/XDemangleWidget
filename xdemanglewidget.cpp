@@ -55,6 +55,13 @@ void XDemangleWidget::adjustView()
 {
 }
 
+void XDemangleWidget::reloadData(bool bSaveSelection)
+{
+    if (!bSaveSelection) {
+        process();
+    }
+}
+
 void XDemangleWidget::process()
 {
     QString sText = ui->plainTextEditInput->toPlainText().trimmed();

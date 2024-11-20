@@ -37,6 +37,7 @@ public:
 
     void setData(const QString &sString);
     virtual void adjustView();
+    virtual void reloadData(bool bSaveSelection);
 
 private:
     void process();
