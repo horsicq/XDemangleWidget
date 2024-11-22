@@ -57,9 +57,8 @@ void XDemangleWidget::adjustView()
 
 void XDemangleWidget::reloadData(bool bSaveSelection)
 {
-    if (!bSaveSelection) {
-        process();
-    }
+    Q_UNUSED(bSaveSelection)
+    process();
 }
 
 void XDemangleWidget::process()
