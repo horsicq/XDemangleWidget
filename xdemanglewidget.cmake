@@ -1,9 +1,14 @@
 include_directories(${CMAKE_CURRENT_LIST_DIR})
 
-include(${CMAKE_CURRENT_LIST_DIR}/../XDemangle/xdemangle.cmake)
+if (NOT DEFINED XDEMANGLE_SOURCES)
+    include(${CMAKE_CURRENT_LIST_DIR}/../XDemangle/xdemangle.cmake)
+    set(XDEMANGLEWIDGET_SOURCES ${XDEMANGLEWIDGET_SOURCES} ${XDEMANGLE_SOURCES})
+endif()
+
 include(${CMAKE_CURRENT_LIST_DIR}/../XShortcuts/xshortcuts.cmake)
 
 set(XDEMANGLEWIDGET_SOURCES
+    ${XDEMANGLEWIDGET_SOURCES}
     ${XDEMANGLE_SOURCES}
     ${XSHORTCUTS_SOURCES}
     ${CMAKE_CURRENT_LIST_DIR}/dialogdemangle.cpp
