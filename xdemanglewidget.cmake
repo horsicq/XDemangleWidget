@@ -11,8 +11,6 @@ endif()
 
 set(XDEMANGLEWIDGET_SOURCES
     ${XDEMANGLEWIDGET_SOURCES}
-    ${XDEMANGLE_SOURCES}
-    ${XSHORTCUTS_SOURCES}
     ${CMAKE_CURRENT_LIST_DIR}/dialogdemangle.cpp
     ${CMAKE_CURRENT_LIST_DIR}/dialogdemangle.h
     ${CMAKE_CURRENT_LIST_DIR}/dialogdemangle.ui
